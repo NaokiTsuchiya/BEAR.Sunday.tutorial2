@@ -10,7 +10,7 @@ use Ray\MediaQuery\Annotation\DbQuery;
 interface TicketQueryInterface
 {
     #[DbQuery('ticket_item')]
-    public function item(string $id = '1'): Ticket|null;
+    public function item(string $id): Ticket|null;
 
     /** @return array<Ticket> */
     #[DbQuery('ticket_list')]

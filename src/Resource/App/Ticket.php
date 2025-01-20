@@ -20,8 +20,8 @@ class Ticket extends ResourceObject
     }
 
     #[Embed(src: '/project', rel: 'project')]
-    #[JsonSchema('ticket.json')]
-    public function onGet(string $id = ''): static
+    #[JsonSchema(schema: 'ticket.json', params: 'ticket.json')]
+    public function onGet(string $id): static
     {
         assert($this->body['project'] instanceof Request);
         $this->body += (array) $this->query->item($id);
